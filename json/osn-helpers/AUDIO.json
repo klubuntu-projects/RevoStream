@@ -1,0 +1,32 @@
+[ { "nameSubCategory": "Untitled", "parameters": [
+    {
+      "name": "SampleRate",
+      "type": "OBS_PROPERTY_LIST",
+      "description": "Sample Rate (requires a restart)",
+      "subType": "OBS_COMBO_FORMAT_INT",
+      "currentValue": 44100,
+      "minVal": -200,
+      "maxVal": 200,
+      "stepVal": 1,
+      "values": [ {}, {} ],
+      "visible": true,
+      "enabled": true,
+      "masked": false
+    },
+    {
+      "name": "ChannelSetup",
+      "type": "OBS_PROPERTY_LIST",
+      "description": "Channels (requires a restart)",
+      "subType": "OBS_COMBO_FORMAT_STRING",
+      "currentValue": "Stereo",
+      "values": [
+        {}, {},
+        {}, {},
+        {}, {},
+        {}
+      ],
+      "visible": true,
+      "enabled": true,
+      "masked": false
+    }
+  ] } ]

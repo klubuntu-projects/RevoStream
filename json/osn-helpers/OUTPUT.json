@@ -1,0 +1,614 @@
+[
+    { "nameSubCategory": "Untitled", "parameters": [
+        {
+          "name": "Mode",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Output Mode",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "Advanced",
+          "values": [ {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+       },
+    {
+      "nameSubCategory": "Streaming",
+      "parameters": [
+        {
+          "name": "TrackIndex",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Track",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "1",
+          "values": [ {}, {}, {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "VodTrackEnabled",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Twitch VOD",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Encoder",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Encoder",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "obs_x264",
+          "values": [ {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ApplyServiceSettings",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enforce streaming service encoder settings",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Rescale",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Rescale Output",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "rate_control",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Rate Control",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "CBR",
+          "values": [ {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "bitrate",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Bitrate",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": 2500,
+          "minVal": 50,
+          "maxVal": 10000000,
+          "stepVal": 50,
+          "values": [ {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "use_bufsize",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Use Custom Buffer Size",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": false,
+          "values": [ {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "buffer_size",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Buffer Size",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": 2500,
+          "minVal": 0,
+          "maxVal": 10000000,
+          "stepVal": 1,
+          "values": [ {}, {}, {}, {} ],
+          "visible": false,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "crf",
+          "type": "OBS_PROPERTY_INT",
+          "description": "CRF",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": 23,
+          "minVal": 0,
+          "maxVal": 51,
+          "stepVal": 1,
+          "values": [ {}, {}, {}, {} ],
+          "visible": false,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "keyint_sec",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Keyframe Interval (seconds, 0=auto)",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": 0,
+          "minVal": 0,
+          "maxVal": 20,
+          "stepVal": 1,
+          "values": [ {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "preset",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "CPU Usage Preset (higher = less CPU)",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "veryfast",
+          "values": [
+            {}, {},
+            {}, {},
+            {}, {},
+            {}, {},
+            {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "profile",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Profile",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "",
+          "values": [ {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "tune",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Tune",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "",
+          "values": [
+            {}, {},
+            {}, {},
+            {}, {},
+            {}, {},
+            {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "x264opts",
+          "type": "OBS_PROPERTY_TEXT",
+          "description": "x264 Options (separated by space)",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "",
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "repeat_headers",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "repeat_headers",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": false,
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": false,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Recording",
+      "parameters": [
+        {
+          "name": "RecType",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Type",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "Standard",
+          "values": [ {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecFilePath",
+          "type": "OBS_PROPERTY_PATH",
+          "description": "Recording Path",
+          "subType": "",
+          "currentValue": "/Users/kamil/Movies",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecFileNameWithoutSpace",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Generate File Name without Space",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecFormat",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Recording Format",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "mkv",
+          "values": [ {}, {}, {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecTracks",
+          "type": "OBS_PROPERTY_BITMASK",
+          "description": "Audio Track",
+          "subType": "",
+          "currentValue": 31,
+          "minVal": -200,
+          "maxVal": 200,
+          "stepVal": 1,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecEncoder",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Recording",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "com.apple.videotoolbox.videoencoder.h264",
+          "values": [ {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecRescale",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Rescale Output",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecMuxerCustom",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Custom Muxer Settings",
+          "subType": "",
+          "currentValue": "",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Recbitrate",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Bitrate",
+          "subType": "",
+          "currentValue": 2500,
+          "minVal": 50,
+          "maxVal": 10000000,
+          "stepVal": 50,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Reclimit_bitrate",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Limit bitrate",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Recmax_bitrate",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Maximum bitrate",
+          "subType": "",
+          "currentValue": 2500,
+          "minVal": 50,
+          "maxVal": 10000000,
+          "stepVal": 50,
+          "values": [],
+          "visible": false,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Recmax_bitrate_window",
+          "type": "OBS_PROPERTY_DOUBLE",
+          "description": "Maximum bitrate window (seconds)",
+          "subType": "",
+          "currentValue": 1.5,
+          "minVal": 0.10000000149011612,
+          "maxVal": 10,
+          "stepVal": 0.25,
+          "values": [],
+          "visible": false,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Reckeyint_sec",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Keyframe Interval (seconds, 0=auto)",
+          "subType": "",
+          "currentValue": 0,
+          "minVal": 0,
+          "maxVal": 20,
+          "stepVal": 1,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Recprofile",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Profile",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "",
+          "values": [ {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Recbframes",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Use B-Frames",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": true,
+          "values": [ {}, {}, {}, {} ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Audio - Track 1",
+      "parameters": [
+        {
+          "name": "Track1Bitrate",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Bitrate",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "160",
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Track1Name",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Name",
+          "subType": "",
+          "currentValue": "Mixed: all sources",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Audio - Track 2",
+      "parameters": [
+        {
+          "name": "Track2Bitrate",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Bitrate",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "160",
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Track2Name",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Name",
+          "subType": "",
+          "currentValue": "Mixed: all sources",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Audio - Track 3",
+      "parameters": [
+        {
+          "name": "Track3Bitrate",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Bitrate",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "160",
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Track3Name",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Name",
+          "subType": "",
+          "currentValue": "Mixed: all sources",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Audio - Track 4",
+      "parameters": [
+        {
+          "name": "Track4Bitrate",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Bitrate",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "160",
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Track4Name",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Name",
+          "subType": "",
+          "currentValue": "Mixed: all sources",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Audio - Track 5",
+      "parameters": [
+        {
+          "name": "Track5Bitrate",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Bitrate",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "160",
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Track5Name",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Name",
+          "subType": "",
+          "currentValue": "Mixed: all sources",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Audio - Track 6",
+      "parameters": [
+        {
+          "name": "Track6Bitrate",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Bitrate",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "160",
+          "values": [
+            {}, {}, {}, {}, {}, {}, {}, {}, {}
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Track6Name",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Name",
+          "subType": "",
+          "currentValue": "",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Replay Buffer",
+      "parameters": [
+        {
+          "name": "RecRB",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enable Replay Buffer",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecRBTime",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Maximum Replay Time (Seconds)",
+          "subType": "",
+          "currentValue": 20,
+          "minVal": 0,
+          "maxVal": 21599,
+          "stepVal": 0,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    }
+  ]

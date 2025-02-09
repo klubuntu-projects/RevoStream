@@ -1,0 +1,283 @@
+[
+    { "nameSubCategory": "Untitled", "parameters": [
+        {
+          "name": "streamType",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Stream Type",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "rtmp_common",
+          "values": [
+            { "Streaming Services": "rtmp_common" },
+            { "Custom Streaming Server": "rtmp_custom" }
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ] },
+    {
+      "nameSubCategory": "Untitled",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Service",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "Twitch",
+          "values": [
+            { "Twitch": "Twitch" },
+            { "YouTube - RTMPS": "YouTube - RTMPS" },
+            { "Facebook Live": "Facebook Live" },
+            { "Restream.io": "Restream.io" },
+            { "Twitter": "Twitter" },
+            { "Lucra.live": "Lucra.live" },
+            { "StageIt": "StageIt" }
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "show_all",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Show all services",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+            "name": "server",
+            "type": "OBS_PROPERTY_LIST",
+            "description": "Server",
+            "subType": "OBS_COMBO_FORMAT_STRING",
+            "currentValue": "auto",
+            "values": [
+              { "Auto (Recommended)": "auto" },
+              { "Default": "rtmp://ingest.global-contribute.live-video.net/app" },
+              {
+                "Europe: Poland, Warsaw (2)": "rtmp://waw02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Denmark, Copenhagen": "rtmp://cph.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Austria, Vienna (2)": "rtmp://vie02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Sweden, Stockholm (4)": "rtmp://arn04.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Sweden, Stockholm (3)": "rtmp://arn03.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Germany, Munich (1)": "rtmp://muc01.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Germany, Dusseldorf (1)": "rtmp://dus01.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Finland, Helsinki (3)": "rtmp://hel03.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Norway, Oslo": "rtmp://osl.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Netherlands, Amsterdam (3)": "rtmp://ams03.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Netherlands, Amsterdam (2)": "rtmp://ams02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Italy, Milan (2)": "rtmp://mil02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: France, Paris (2)": "rtmp://cdg02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: France, Paris (10)": "rtmp://cdg10.contribute.live-video.net/app"
+              },
+              {
+                "Europe: UK, London (8)": "rtmp://lhr08.contribute.live-video.net/app"
+              },
+              {
+                "Europe: UK, London (3)": "rtmp://lhr03.contribute.live-video.net/app"
+              },
+              {
+                "Europe: France, Marseille (2)": "rtmp://mrs02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Germany, Frankfurt (5)": "rtmp://fra05.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Germany, Frankfurt (2)": "rtmp://fra02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Spain, Madrid (2)": "rtmp://mad02.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Spain, Madrid (1)": "rtmp://mad01.contribute.live-video.net/app"
+              },
+              {
+                "Asia: India, New Delhi (1)": "rtmp://del01.contribute.live-video.net/app"
+              },
+              {
+                "Europe: Czech Republic, Prague": "rtmp://prg03.contribute.live-video.net/app"
+              },
+              {
+                "Asia: India, Hyderabad (1)": "rtmp://hyd01.contribute.live-video.net/app"
+              },
+              {
+                "Asia: India, Mumbai": "rtmp://bom01.contribute.live-video.net/app"
+              },
+              {
+                "NA: Canada, Quebec": "rtmp://ymq03.contribute.live-video.net/app"
+              },
+              {
+                "US East: New York, NY": "rtmp://jfk.contribute.live-video.net/app"
+              },
+              {
+                "US East: New York, NY (50)": "rtmp://jfk50.contribute.live-video.net/app"
+              },
+              {
+                "NA: Canada, Toronto": "rtmp://yto.contribute.live-video.net/app"
+              },
+              {
+                "Asia: India, Bangalore (1)": "rtmp://blr01.contribute.live-video.net/app"
+              },
+              {
+                "Asia: India, Chennai (1)": "rtmp://maa01.contribute.live-video.net/app"
+              },
+              {
+                "US East: Ashburn, VA (5)": "rtmp://iad05.contribute.live-video.net/app"
+              },
+              {
+                "US East: Chicago, IL (3)": "rtmp://ord03.contribute.live-video.net/app"
+              },
+              {
+                "US East: Chicago, IL (56)": "rtmp://ord56.contribute.live-video.net/app"
+              },
+              {
+                "Asia: South Korea, Seoul (4)": "rtmp://sel04.contribute.live-video.net/app"
+              },
+              {
+                "Asia: South Korea, Seoul (3)": "rtmp://sel03.contribute.live-video.net/app"
+              },
+              {
+                "US East: Atlanta, GA": "rtmp://atl.contribute.live-video.net/app"
+              },
+              {
+                "US West: Seattle, WA (2)": "rtmp://sea02.contribute.live-video.net/app"
+              },
+              {
+                "South America: Brazil, Fortaleza (1)": "rtmp://for01.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Thailand, Bangkok (2)": "rtmp://bkk02.contribute.live-video.net/app"
+              },
+              {
+                "US East: Miami, FL (5)": "rtmp://mia05.contribute.live-video.net/app"
+              },
+              {
+                "US Central: Denver, CO (52)": "rtmp://den52.contribute.live-video.net/app"
+              },
+              {
+                "Asia: China, Hong Kong (6)": "rtmp://hkg06.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Japan, Osaka (1)": "rtmp://osa01.contribute.live-video.net/app"
+              },
+              {
+                "US Central: Garland, TX (56)": "rtmp://dfw56.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Taiwan, Taipei (1)": "rtmp://tpe01.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Taiwan, Taipei (3)": "rtmp://tpe03.contribute.live-video.net/app"
+              },
+              {
+                "US Central: Dallas, TX (2)": "rtmp://dfw02.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Japan, Tokyo (3)": "rtmp://tyo03.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Japan, Tokyo (5)": "rtmp://tyo05.contribute.live-video.net/app"
+              },
+              {
+                "US Central: Houston, TX (50)": "rtmp://iah50.contribute.live-video.net/app"
+              },
+              {
+                "US West: San Jose, California (6)": "rtmp://sjc06.contribute.live-video.net/app"
+              },
+              {
+                "US East: McAllen, TX (1)": "rtmp://mfe01.contribute.live-video.net/app"
+              },
+              {
+                "US West: Los Angeles, CA": "rtmp://lax.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Manila, Philippines (1)": "rtmp://mnl01.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Singapore (1)": "rtmp://sin01.contribute.live-video.net/app"
+              },
+              {
+                "South America: Colombia, Bogota (1)": "rtmp://bog01.contribute.live-video.net/app"
+              },
+              {
+                "NA: Mexico, Queretaro (3)": "rtmp://qro03.contribute.live-video.net/app"
+              },
+              {
+                "NA: Mexico, Queretaro (4)": "rtmp://qro04.contribute.live-video.net/app"
+              },
+              {
+                "South America: Brazil, Rio de Janeiro (4)": "rtmp://rio04.contribute.live-video.net/app"
+              },
+              {
+                "South America: Brazil, Rio de Janeiro (3)": "rtmp://rio03.contribute.live-video.net/app"
+              },
+              {
+                "Asia: Indonesia, Jakarta (2)": "rtmp://jkt02.contribute.live-video.net/app"
+              },
+              {
+                "South America: Brazil, Sao Paulo (5)": "rtmp://sao05.contribute.live-video.net/app"
+              },
+              {
+                "South America: Brazil, Sao Paulo": "rtmp://sao03.contribute.live-video.net/app"
+              },
+              {
+                "South America: Buenos Aires, Argentina (1)": "rtmp://bue01.contribute.live-video.net/app"
+              },
+              {
+                "South America: Chile, Santiago (1)": "rtmp://scl01.contribute.live-video.net/app"
+              },
+              {
+                "Oceania: Australia, Sydney (2)": "rtmp://syd02.contribute.live-video.net/app"
+              },
+              {
+                "Oceania: Australia, Sydney (3)": "rtmp://syd03.contribute.live-video.net/app"
+              }
+            ],
+            "visible": true,
+            "enabled": true,
+            "masked": false
+          },
+        {
+          "name": "key",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Stream key",
+          "subType": "",
+          "currentValue": "",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": true
+        }
+      ]
+      
+    }
+  ]

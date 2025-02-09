@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Settings</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #111;
+        color: white;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 0.3fr 1.7fr;
+        grid-template-rows: 1fr;
+        gap: 3px;
+        grid-template-areas: "options settings";
+        height: 100vh;
+      }
+
+      .options {
+        grid-area: options;
+        padding: 10px;
+      }
+
+      .settings_frame {
+        grid-area: settings;
+        border-left: 1px solid white;
+        padding: 10px;
+      }
+
+      .settings {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .options p {
+        margin-top: 10px;
+        font-size: 1.5em;
+      }
+
+      .options ul {
+        list-style-type: none;
+        padding: 0;
+        line-height: 30px;
+      }
+
+      .options li {
+        padding: 3px;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+
+      .options li.selected {
+        color: red;
+      }
+
+      .options li:hover {
+        background-color: #333;
+        border-radius: 8px;
+      }
+
+      input{
+        border: 0;
+      }
+
+      select, input{
+        outline: none;
+        padding: 5px 10px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="options">
+        <p>Options</p>
+        <ul class="options-list">
+          <li class="selected">General</li>
+          <li>Broadcast</li>
+          <li>Audio</li>
+          <li>Video</li>
+          <li>Styles</li>
+          <li>Advanced</li>
+          <li>About</li>
+        </ul>
+      </div>
+      <div class="settings_frame" id="global-settings">
+        <h1>General Settings</h1>
+        <div class="settings">
+          <div class="section">
+            <h3>Output</h3>
+            <p>
+              <input type="checkbox" id="stream_confirm_start_dialog" checked />
+              Show confirmation dialog before start streaming:
+            </p>
+            <p>
+              <input type="checkbox" id="stream_confirm_stop_dialog" checked />
+              Show confirmation dialog before stop streaming
+            </p>
+            <p>
+              <input type="checkbox" id="stream_confirm_stop_dialog" checked />
+              Automatically start record, after run streaming
+            </p>
+            <p>
+              <input
+                type="checkbox"
+                id="stream_record_confirm_dialog"
+                checked />
+              Don't stop record, after start stream
+            </p>
+          </div>
+          <div class="section">
+            <h3>Projector Previews</h3>
+            <p>
+              <input type="checkbox" id="projector_hide_cursor" checked />Hide
+              cursor over projectors
+            </p>
+            <p>
+              <input type="checkbox" id="projector_always_top" checked />Display
+              all projectors, always on top
+            </p>
+          </div>
+          <div class="section">
+            <h3>App Tray</h3>
+            <p>
+              <input type="checkbox" id="app_tray_enable" checked />Enable show
+              app on tray
+            </p>
+            <p>
+              <input type="checkbox" id="app_tray_start" checked />Minimize to
+              tray when started app
+            </p>
+            <p>
+              <input type="checkbox" id="app_tray_minimize" checked />Always
+              minimize to tray, instead taskbar
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="settings_frame" id="broadcast-settings" style="display: none">
+        <h1>Broadcast Settings</h1>
+        <div class="settings">
+          <div class="section">
+            <h3>Broadcast Type</h3>
+            <p>
+              <input
+                type="radio"
+                name="broadcast_type"
+                value="recommened"
+                checked />
+              Recommended Service
+            </p>
+            <p>
+              <input type="radio" name="broadcast_type" value="custom" /> Custom
+              (RTMP)
+            </p>
+          </div>
+          <div class="section">
+            <h3>Select Streaming Platform</h3>
+            <div style="display: flex; align-items: center">
+              <p style="margin-right: 5px">Broadcast on:</p>
+              <select name="streaming_platform" id="streaming_platform">
+                <option value="youtube">YouTube (RTMPS)</option>
+                <option value="twitch">Twitch</option>
+                <option value="facebook">Facebook</option>
+                <option value="restream">Restream.io</option>
+                <option value="twitter">Twitter</option>
+                <option value="lucra">Lucra Live</option>
+              </select>
+            </div>
+            <p style="margin-right: 5px">
+              Stream key:
+              <input
+                type="text"
+                id="streaming_key"
+                style="outline: 0; width: 250px"
+                placeholder="secret_key" />
+            </p>
+          </div>
+          <div class="section">
+            <h3>Custom Broadcast</h3>
+            <p>
+              RTMP Url:
+              <input
+                type="text"
+                id="custom_rtmp_url"
+                style="outline: 0; width: 250px"
+                placeholder="rtmp://127.0.0.1" />
+            </p>
+            <p>
+              RTMP Key:
+              <input
+                type="text"
+                id="custom_rtmp_key"
+                style="outline: 0; width: 250px"
+                placeholder="secret_key" />
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="settings_frame" id="audio-settings" style="display: none">
+        <h1>Audio Settings</h1>
+        <div class="settings">
+          <div class="section">
+            <h3>General</h3>
+            <div class="sample-rate">
+              <p>
+                Sample Rate:
+                <select name="sample_rate" id="sample_rate">
+                  <option value="44100">44100 Hz</option>
+                  <option value="48000">48000 Hz</option>
+                  <option value="96000">96000 Hz</option>
+                </select>
+              </p>
+            </div>
+            <div class="channels">
+              <p>
+                Channels:
+                <select name="channels" id="channels">
+                  <option value="mono">Mono</option>
+                  <option value="stero">Stereo</option>
+                  <option value="2.1">2.1</option>
+                  <option value="4.0">4.0</option>
+                  <option value="4.1">4.1</option>
+                  <option value="5.1">5.1</option>
+                  <option value="7.1">7.1</option>
+                </select>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="settings_frame" id="video-settings" style="display: none">
+        <h1>Video Settings</h1>
+        <div class="settings">
+          <div class="section">
+            <h3>Standard</h3>
+            <div class="base-resolution">
+              <p>
+                Base (Studio) Resolution:
+                <select name="base_resolution" id="base_resolution">
+                  <option value="1920x1080">1920x1080 (FullHD)</option>
+                  <option value="1280x720">1280x720 (HD)</option>
+                </select>
+              </p>
+            </div>
+            <div class="scaled_resolution">
+              <p>
+                Output (Scaled) Resolution:
+                <select name="scaled_resolution" id="scaled_resolution">
+                  <option value="1920x1080">1920x1080 (FullHD)</option>
+                  <option value="1280x720">1280x720 (HD)</option>
+                  <option value="852x480">852x480 (Similary to SD)</option>
+                  <option value="768x432">768x432 (Similary to SD)</option>
+                  <option value="640x360">640x360 (Similary to 360p)</option>
+                </select>
+              </p>
+            </div>
+            <div class="scaling-type">
+              <p>
+                Scaling Type:
+                <select name="scaling_type" id="scaling_type">
+                  <option value="lanczos">Lanczos</option>
+                  <option value="bicubic">Bicubic</option>
+                  <option value="area">Area</option>
+                  <option value="bilinear">Bicublin</option>
+                </select>
+              </p>
+            </div>
+            <div class="fps-value">
+              <p>
+                FPS:
+                <select name="fps" id="fps">
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="24">24 (NTSC - Film)</option>
+                  <option value="25">25 (PAL)</option>
+                  <option value="29.97">29.97 (Recommended for TV)</option>
+                  <option value="30">30</option>
+                  <option value="60">60</option>
+                </select>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="settings_frame" id="styles-settings" style="display: none">
+        <h1>Styles</h1>
+        <div class="settings">
+          <div class="section">
+            <h3>Soon</h3>
+          </div>
+        </div>
+      </div>
+      <div class="settings_frame" id="advanced-settings" style="display: none">
+        <h1>Advanced Settings</h1>
+        <div class="settings">
+          <div class="section">
+            <h3>Colors</h3>
+            <p>
+              Color Format
+              <select name="color_format" id="color_format">
+                <option value="NV12">NV12</option>
+                <option value="I444">I444</option>
+                <option value="I420">I420</option>
+                <!-- <option value="YV12">YV12</option> -->
+                <option value="RGB">RGB</option>
+              </select>
+            </p>
+            <p>
+              Color Space
+              <select name="color_space" id="color_space">
+                <option value="srgb">sRGB</option>
+                <option value="709">709</option>
+                <option value="601">601</option>
+              </select>
+            </p>
+            <p>
+              Color Range
+              <select name="color_range" id="color_range">
+                <option value="full">Full</option>
+                <option value="partial">Partial</option>
+              </select>
+            </p>
+          </div>
+          <div class="section">
+            <h3>Audio</h3>
+            <p>
+              Monitoring device
+              <select name="monitoring_device" id="monitoring_device">
+                <option value="default">Default</option>
+                <option value="none">None</option>
+              </select>
+            </p>
+            <!-- <p>
+              Audio Bitrate
+              <select name="audio_bitrate" id="audio_bitrate">
+                <option value="96">96 kbps</option>
+                <option value="128">128 kbps</option>
+                <option value="192">192 kbps</option>
+                <option value="256">256 kbps</option>
+                <option value="320">320 kbps</option>
+              </select>
+            </p>
+            <p>
+              Audio Codec
+              <select name="audio_codec" id="audio_codec">
+                <option value="aac">AAC</option>
+                <option value="mp3">MP3</option>
+                <option value="vorbis">Vorbis</option>
+                <option value="opus">Opus</option>
+              </select>
+            </p> -->
+          </div>
+          <div class="section">
+            <h3>Recording & Streaming</h3>
+            <p>
+              Recording Path:
+              <input
+                type="text"
+                id="recording_path"
+                style="outline: 0; width: 250px"
+                placeholder="C:\Users\user\Videos" />
+            </p>
+            <p>
+              Recording Format
+              <select name="recording_format" id="recording_format">
+                <option value="mp4">MP4</option>
+                <option value="mkv">MKV</option>
+                <option value="flv">FLV</option>
+                <option value="avi">AVI</option>
+              </select>
+            </p>
+            <p>
+              Overwrite file if exists
+              <input type="checkbox" id="overwrite_file" checked />
+            </p>
+            <p>
+              Stream delay (sec)
+              <input
+                type="number"
+                id="stream_delay"
+                style="outline: 0; width: 50px"
+                value="0" />
+            </p>
+          </div>
+          <div class="section">
+            <h3>Automatically Reconnect</h3>
+            <p>
+              <input type="checkbox" id="auto_reconnect" checked />
+              Automatically reconnect if lost connection
+            </p>
+            <p>
+              Reconnect delay (sec)
+              <input
+                type="number"
+                id="reconnect_delay"
+                style="outline: 0; width: 50px"
+                value="10" />
+            </p>
+            <p>
+              Max reconnect attempts
+              <input
+                type="number"
+                id="max_reconnect_attempts"
+                style="outline: 0; width: 50px"
+                value="10" />
+            </p>
+          </div>
+          <div class="section">
+            <h3>Network</h3>
+            <p>
+              Bind IP
+              <input
+                type="text"
+                id="bind_ip"
+                style="outline: 0; width: 250px"
+                placeholder="0.0.0.0" />
+            </p>
+            <p>
+              <input type="checkbox" id="dynamic_bitrate" checked /> 
+              Change dynamic bitrate while droppping frames
+            </p>
+          </div>
+          <div class="section">
+            <h3>Other</h3>
+            <p>
+              <input type="checkbox" id="acceleration_browser" checked /> 
+              Enable acceleration on browser sources
+            </p>
+            <p>
+              <input type="checkbox" id="media_caching" checked /> 
+              Enable caching media files
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="settings_frame" id="about" style="display: none">
+        <h1>About</h1>
+        <div class="settings">
+          <div class="section">
+            <h3>RevoStream</h3>
+            <p>
+              Version: 0.1.0 (Alpha Build)
+            </p>
+            <p>
+              License: (Only for Team Members)
+            </p>
+            <p>
+              Author: <b>RevoStream</b>
+            </p>
+          </div>
+      </div>    
+    </div>
+    <script src="settings/renderer.js" type="module"></script>
+  </body>
+</html>

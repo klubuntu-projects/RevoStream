@@ -1,0 +1,212 @@
+[
+    {
+      "nameSubCategory": "Output",
+      "parameters": [
+        {
+          "name": "WarnBeforeStartingStream",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Show confirmation dialog when starting streams",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "WarnBeforeStoppingStream",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Show confirmation dialog when stopping streams",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecordWhenStreaming",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Automatically record when streaming",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "KeepRecordingWhenStreamStops",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Keep recording when stream stops",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ReplayBufferWhileStreaming",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Automatically start replay buffer when streaming",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "KeepReplayBufferStreamStops",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Keep replay buffer active when stream stops",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ] 
+    },
+    {
+      "nameSubCategory": "Source Alignement Snapping",
+      "parameters": [
+        {
+          "name": "SnappingEnabled",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enable",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "SnapDistance",
+          "type": "OBS_PROPERTY_DOUBLE",
+          "description": "Snap Sensitivity",
+          "subType": "",
+          "currentValue": 10,
+          "minVal": 0,
+          "maxVal": 100,
+          "stepVal": 0.5,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ScreenSnapping",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Snap Sources to edge of screen",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "SourceSnapping",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Snap Sources to other sources",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "CenterSnapping",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Snap Sources to horizontal and vertical center",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Projectors",
+      "parameters": [
+        {
+          "name": "HideProjectorCursor",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Hide cursor over projectors",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ProjectorAlwaysOnTop",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Make projectors always on top",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "SaveProjectors",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Save projectors on exit",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "System Tray",
+      "parameters": [
+        {
+          "name": "SysTrayEnabled",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enable",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "SysTrayWhenStarted",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Minimize to system tray when started",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "SysTrayMinimizeToTray",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Always minimize to system tray instead of task bar",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    }
+  ]

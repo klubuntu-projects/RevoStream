@@ -1,0 +1,250 @@
+[
+    {
+      "nameSubCategory": "Video",
+      "parameters": [
+        {
+          "name": "ColorFormat",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Color Format",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "NV12",
+          "values": [ [Object], [Object], [Object], [Object] ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ColorSpace",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "YUV Color Space",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "601",
+          "values": [ [Object], [Object] ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ColorRange",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "YUV Color Range",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "Partial",
+          "values": [ [Object], [Object] ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ForceGPUAsRenderDevice",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Force GPU as render device",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    { "nameSubCategory": "Audio", "parameters": [
+        {
+          "name": "MonitoringDeviceName",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Audio Monitoring Device",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "Default",
+          "values": [ [Object], [Object], [Object], [Object] ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ] },
+    { "nameSubCategory": "Recording", "parameters": [
+        {
+          "name": "FilenameFormatting",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Filename Formatting",
+          "subType": "",
+          "currentValue": "%CCYY-%MM-%DD %hh-%mm-%ss",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "OverwriteIfExists",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Overwrite if file exists",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ] },
+    {
+      "nameSubCategory": "Replay Buffer",
+      "parameters": [
+        {
+          "name": "RecRBPrefix",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Replay Buffer Filename Prefix",
+          "subType": "",
+          "currentValue": "Replay",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RecRBSuffix",
+          "type": "OBS_PROPERTY_EDIT_TEXT",
+          "description": "Replay Buffer Filename Suffix",
+          "subType": "",
+          "currentValue": "",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Stream Delay",
+      "parameters": [
+        {
+          "name": "DelayEnable",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enable",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "DelaySec",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Duration (seconds)",
+          "subType": "",
+          "currentValue": 20,
+          "minVal": 0,
+          "maxVal": 1800,
+          "stepVal": 0,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "DelayPreserve",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Preserved cutoff point (increase delay) when reconnecting",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    {
+      "nameSubCategory": "Automatically Reconnect",
+      "parameters": [
+        {
+          "name": "Reconnect",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enable",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "RetryDelay",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Retry Delay (seconds)",
+          "subType": "",
+          "currentValue": 10,
+          "minVal": 0,
+          "maxVal": 30,
+          "stepVal": 0,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "MaxRetries",
+          "type": "OBS_PROPERTY_INT",
+          "description": "Maximum Retries",
+          "subType": "",
+          "currentValue": 20,
+          "minVal": 0,
+          "maxVal": 10000,
+          "stepVal": 0,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    },
+    { "nameSubCategory": "Network", "parameters": [
+        {
+          "name": "BindIP",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Bind to IP",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "default",
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "DynamicBitrate",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Dynamically change bitrate when dropping frames while streaming",
+          "subType": "",
+          "currentValue": false,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ] },
+    { "nameSubCategory": "Sources", "parameters": [
+        {
+          "name": "browserHWAccel",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enable Browser Source Hardware Acceleration (requires a restart)",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ] },
+    { "nameSubCategory": "Media Files", "parameters": [
+        {
+          "name": "fileCaching",
+          "type": "OBS_PROPERTY_BOOL",
+          "description": "Enable media file caching",
+          "subType": "",
+          "currentValue": true,
+          "values": [],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ] }
+  ]

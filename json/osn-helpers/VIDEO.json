@@ -1,0 +1,74 @@
+[
+    {
+      "nameSubCategory": "Untitled",
+      "parameters": [
+        {
+          "name": "Base",
+          "type": "OBS_INPUT_RESOLUTION_LIST",
+          "description": "Base (Canvas) Resolution",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "1920x1080",
+          "values": [ [Object], [Object] ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "Output",
+          "type": "OBS_INPUT_RESOLUTION_LIST",
+          "description": "Output (Scaled) Resolution",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "1920x1080",
+          "values": [
+            [Object], [Object],
+            [Object], [Object],
+            [Object], [Object],
+            [Object], [Object],
+            [Object], [Object],
+            [Object]
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "ScaleType",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Downscale Filter",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "bicubic",
+          "values": [ [Object], [Object], [Object] ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "FPSType",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "FPS Type",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "Common FPS Values",
+          "values": [ [Object], [Object], [Object] ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        },
+        {
+          "name": "FPSCommon",
+          "type": "OBS_PROPERTY_LIST",
+          "description": "Common FPS Values",
+          "subType": "OBS_COMBO_FORMAT_STRING",
+          "currentValue": "60",
+          "values": [
+            [Object], [Object],
+            [Object], [Object],
+            [Object], [Object],
+            [Object], [Object]
+          ],
+          "visible": true,
+          "enabled": true,
+          "masked": false
+        }
+      ]
+    }
+  ]

@@ -1,0 +1,1 @@
+Source: https://github.com/Envek/obs-studio-node-example/

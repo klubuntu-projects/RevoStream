@@ -1,0 +1,33 @@
+{
+  "name": "revostream",
+  "version": "1.0.0",
+  "description": "Electron and OBS together. As simple as possible.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . ",
+    "debug": "ELECTRON_ENABLE_LOGGING=true ELECTRON_ENABLE_STACK_DUMPING=true electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dir-pack": "electron-builder --mac --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "streaming"
+  ],
+  "author": "",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "node-window-rendering": "https://slobs-node-window-rendering.s3-us-west-2.amazonaws.com/node-window-rendering-1.0.15-osx.tar.gz",
+    "obs-studio-node": "https://s3-us-west-2.amazonaws.com/obsstudionodes3.streamlabs.com/osn-0.22.15-release-osx.tar.gz",
+    "rxjs": "^6.6.7",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "electron": "28.3.3",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "my.revostream"
+  }
+}
